@@ -357,6 +357,7 @@ MODFLAGS	= -DMODULE \
 		  -fsched-spec-load \
 		  -funswitch-loops \
 		  -fvect-cost-model \
+		  -fno-aggressive-loop-optimizations \
 		  -Wno-sizeof-pointer-memaccess
 CFLAGS_MODULE   = $(MODFLAGS)
 AFLAGS_MODULE   = $(MODFLAGS)
@@ -371,6 +372,7 @@ CFLAGS_KERNEL	= -march=armv7-a \
 		  -funswitch-loops \
 		  -fvect-cost-model \
 		  -O2 \
+		  -fno-aggressive-loop-optimizations \
 		  -Wno-sizeof-pointer-memaccess
 
 AFLAGS_KERNEL	=
@@ -384,14 +386,14 @@ LINUXINCLUDE    := -I$(srctree)/arch/$(hdr-arch)/include \
                    $(if $(KBUILD_SRC), -I$(srctree)/include) \
                    -include $(srctree)/include/linux/kconfig.h
 
-KBUILD_CPPFLAGS := -D__KERNEL__ -Wno-sizeof-pointer-memaccess
+KBUILD_CPPFLAGS := -D__KERNEL__ -fno-aggressive-loop-optimizations -Wno-sizeof-pointer-memaccess
 
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
 		   -fno-delete-null-pointer-checks \
-		   -Wno-sizeof-pointer-memaccess
+		   -fno-aggressive-loop-optimizations -Wno-sizeof-pointer-memaccess
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
