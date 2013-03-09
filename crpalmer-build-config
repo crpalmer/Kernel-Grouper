@@ -1,0 +1,24 @@
+CROSS_COMPILE="ccache /opt/toolchains/linaro-4.7/bin/arm-eabi-"
+HOST_CC="ccache gcc"
+LOCAL_BUILD_DIR=nexus7
+TARGET_DIR=~/nexus7/updates
+DEFCONFIG=sabermod_grouper_defconfig
+SYSTEM_PARTITION="/dev/block/platform/sdhci-tegra.3/by-name/APP"
+FLASH_BOOT='package_extract_file("boot.img", "/dev/block/platform/sdhci-tegra.3/by-name/LNX")'
+
+# ----
+
+N_CORES=4
+VERSION=crpalmer-0.0.1
+
+# ----
+
+BANNER=`cat <<EOF
+ui_print("**********************************************");
+ui_print("*                                            *");
+ui_print("*                  crpalmer's                *");
+ui_print("*                                            *");
+ui_print("* Version: $VERSION                    *");
+ui_print("*                                            *");
+ui_print("**********************************************");
+EOF`
