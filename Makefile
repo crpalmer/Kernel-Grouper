@@ -357,7 +357,8 @@ MODFLAGS	= -DMODULE \
 		  -fsched-spec-load \
 		  -funswitch-loops \
 		  -fvect-cost-model \
-		  -Wno-sizeof-pointer-memaccess
+		  -Wno-sizeof-pointer-memaccess \
+		  -O3
 CFLAGS_MODULE   = $(MODFLAGS)
 AFLAGS_MODULE   = $(MODFLAGS)
 LDFLAGS_MODULE  = -T $(srctree)/scripts/module-common.lds
@@ -370,7 +371,7 @@ CFLAGS_KERNEL	= -march=armv7-a \
 		  -fsched-spec-load \
 		  -funswitch-loops \
 		  -fvect-cost-model \
-		  -O2 \
+		  -O3 \
 		  -Wno-sizeof-pointer-memaccess
 
 AFLAGS_KERNEL	=
