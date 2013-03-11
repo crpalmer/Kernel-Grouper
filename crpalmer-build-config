@@ -9,7 +9,7 @@ FLASH_BOOT='package_extract_file("boot.img", "/dev/block/platform/sdhci-tegra.3/
 # ----
 
 N_CORES=4
-VERSION=crpalmer-0.0.2
+VERSION=crpalmer-0.0.3
 
 # ----
 
